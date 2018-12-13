@@ -1,0 +1,11 @@
+C:\Users\guillermo.rodriguez\source\repos\ArqCalculator\ARQCALC.Entidades\bin\Debug\ARQCALC.Entidades.dll
+C:\Users\guillermo.rodriguez\source\repos\ArqCalculator\ARQCALC.Entidades\bin\Debug\ARQCALC.Entidades.pdb
+C:\Users\guillermo.rodriguez\source\repos\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\guillermo.rodriguez\source\repos\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.dll
+C:\Users\guillermo.rodriguez\source\repos\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.pdb
+C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Entidades\bin\Debug\ARQCALC.Entidades.dll
+C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Entidades\bin\Debug\ARQCALC.Entidades.pdb
+C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.csprojAssemblyReference.cache
+C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.dll
+C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.pdb

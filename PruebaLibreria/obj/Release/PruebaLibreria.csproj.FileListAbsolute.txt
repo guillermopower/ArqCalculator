@@ -1,0 +1,2 @@
+C:\Users\THE-CROW\source\repos\CoreCalculoConductividad\PruebaLibreria\obj\Release\PruebaLibreria.csprojResolveAssemblyReference.cache
+C:\Users\THE-CROW\source\repos\CoreCalculoConductividad\PruebaLibreria\obj\Release\PruebaLibreria.csproj.CoreCompileInputs.cache

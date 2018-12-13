@@ -1,0 +1,14 @@
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\bin\Debug\PruebaLibreria.exe.config
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\bin\Debug\PruebaLibreria.exe
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\bin\Debug\PruebaLibreria.pdb
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\obj\Debug\ARQCALC.Test.csprojAssemblyReference.cache
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\obj\Debug\ARQCALC.Test.csproj.CoreCompileInputs.cache
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\obj\Debug\PruebaLibreria.exe
+C:\Users\guillermo.rodriguez\Source\Repos\ArqCalculator\PruebaLibreria\obj\Debug\PruebaLibreria.pdb
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\bin\Debug\PruebaLibreria.exe.config
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\bin\Debug\PruebaLibreria.exe
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\bin\Debug\PruebaLibreria.pdb
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\obj\Debug\ARQCALC.Test.csprojAssemblyReference.cache
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\obj\Debug\ARQCALC.Test.csproj.CoreCompileInputs.cache
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\obj\Debug\PruebaLibreria.exe
+C:\Users\THE-CROW\Downloads\ArqCalculator\PruebaLibreria\obj\Debug\PruebaLibreria.pdb
