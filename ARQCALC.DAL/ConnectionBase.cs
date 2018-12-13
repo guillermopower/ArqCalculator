@@ -15,7 +15,6 @@ namespace ARQCALC.DAL
     {
         public SqlConnection sqlConnection;
         private readonly string strSQLConnection = ConfigurationManager.ConnectionStrings["ARQCALCConnectionString"].ConnectionString;
-        //"workstation id = ARQCALC.mssql.somee.com; packet size = 4096; user id = guillermor1977_SQLLogin_1; pwd=imu39wy4p1;data source = ARQCALC.mssql.somee.com; persist security info=False;initial catalog = ARQCALC"; 
         private readonly string strSQLCobranzasConnection = ConfigurationManager.ConnectionStrings["ARQCALCConnectionString"].ConnectionString;
 
         public enum EnumNameDataBase
