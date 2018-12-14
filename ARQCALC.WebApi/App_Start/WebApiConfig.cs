@@ -15,9 +15,9 @@ namespace ARQCALC.WebApi
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "ARQCALCWebApi",
+                routeTemplate: "api/{controller}/{actionname}/{id}/{nombre}",
+                defaults: new { id = RouteParameter.Optional, nombre = RouteParameter.Optional }
             );
         }
     }
