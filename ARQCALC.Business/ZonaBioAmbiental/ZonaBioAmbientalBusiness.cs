@@ -7,9 +7,15 @@ using ARQCALC.DAL;
 
 namespace ARQCALC.Business
 {
-    public class ZonaBioAmbientalBusiness
+    public class ZonaBioAmbientalBusiness: IZonaBioAmbientalBusiness
     {
-        ZonaBioAmbientalDAL dal = new ZonaBioAmbientalDAL();
+        private readonly IZonaBioAmbientalDAL dal;
+
+        public ZonaBioAmbientalBusiness(IZonaBioAmbientalDAL dal)
+        {
+            this.dal = dal;
+        }
+
         public List<ZonaBioAmbiental> GetZonaBioAmbientales(int? IdZonaBioAmbiental, string NombreZonaBioAmbiental)
         {
             List<ZonaBioAmbiental> lstZonaBioAmbientales = new List<ZonaBioAmbiental>();

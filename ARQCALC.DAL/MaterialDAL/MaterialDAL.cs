@@ -13,12 +13,12 @@ namespace ARQCALC.DAL
     {
         public List<Material> ListaMateriales;
 
-        //private readonly IConnectionBase _connectionBase;
+        private readonly IConnectionBase _connectionBase;
         //private readonly ConnectionBase _connectionBase;
 
-        public MaterialDAL()
+        public MaterialDAL(IConnectionBase ConnectionBase)
         {
-            ConnectionBase _connectionBase = new ConnectionBase();
+            _connectionBase = ConnectionBase;
         }
 
         public List<Material> GetMateriales(int? IdMaterial = null , string NombreMaterial = null)
@@ -29,7 +29,7 @@ namespace ARQCALC.DAL
                 new SqlParameter("@NombreMaterial",NombreMaterial)
             };
 
-            ConnectionBase _connectionBase = new ConnectionBase();
+            //ConnectionBase _connectionBase = new ConnectionBase();
 
             using (SqlDataReader dr = (SqlDataReader)_connectionBase.ExecuteByStoredProcedure("spMATERIALES_SELECT",
                                                                                                parameters,

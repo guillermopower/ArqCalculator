@@ -10,6 +10,7 @@ using ARQCALC.Business;
 using AllowAnonymousAttribute = System.Web.Http.AllowAnonymousAttribute;
 using ActionNameAttribute = System.Web.Http.ActionNameAttribute;
 using System.Web.Http.Cors;
+using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 
 namespace ARQCALC.WebApi.Controllers
 {
@@ -25,12 +26,14 @@ namespace ARQCALC.WebApi.Controllers
         }
 
         [ActionName("obtener-materiales")]
+        [HttpGet]
         public IEnumerable<Material>ObtenerTodos()
         {
             return _MaterialBusiness.GetMateriales(null,null);
         }
 
         [ActionName("obtener-materiales-by-id")]
+        [HttpGet]
         public IEnumerable<Material> Get(int? id, string nombre)
         {
             return _MaterialBusiness.GetMateriales(id,nombre);

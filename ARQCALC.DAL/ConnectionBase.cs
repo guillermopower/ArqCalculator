@@ -11,21 +11,22 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace ARQCALC.DAL
 {
-    public class ConnectionBase //: IConnectionBase
+    public class ConnectionBase: IConnectionBase
     {
-        public SqlConnection sqlConnection;
-        private readonly string strSQLConnection = ConfigurationManager.ConnectionStrings["ARQCALCConnectionString"].ConnectionString;
-        private readonly string strSQLCobranzasConnection = ConfigurationManager.ConnectionStrings["ARQCALCConnectionString"].ConnectionString;
+        readonly SqlConnection sqlConnection = new SqlConnection();
+        readonly OracleConnection oracleConnection = new OracleConnection();
 
+        private readonly string strSQLConnection = ConfigurationManager.ConnectionStrings["ARQCALCConnectionString"].ConnectionString;
+        private readonly string strOracleIBSConnection = ConfigurationManager.ConnectionStrings["ARQCALCConnectionString"].ConnectionString;
         public enum EnumNameDataBase
         {
             ARQCALC,
-            OTRA
+            bdCobranzas
         }
         public enum EnumTypeDataBase
         {
             SQLDB,
-            ORACLEDB
+            OracleIBS
         }
 
         public enum EnumTypeExecute
@@ -37,8 +38,8 @@ namespace ARQCALC.DAL
 
         public ConnectionBase()
         {
-            sqlConnection = new SqlConnection();
             sqlConnection.ConnectionString = this.strSQLConnection;
+            oracleConnection.ConnectionString = this.strOracleIBSConnection;
         }
 
         public DbParameterCollection ParamsCollectionResult { get; set; }
@@ -55,14 +56,15 @@ namespace ARQCALC.DAL
                         DataConnection = ChooseDatabaseName(sqlConnection, EnumNameDataBase.ARQCALC);
                         break;
                     }
-                    else if (nameDataBaseName == EnumNameDataBase.OTRA)
+                    else if (nameDataBaseName == EnumNameDataBase.bdCobranzas)
                     {
-                        DataConnection = ChooseDatabaseName(sqlConnection, EnumNameDataBase.OTRA);
+                        DataConnection = ChooseDatabaseName(sqlConnection, EnumNameDataBase.bdCobranzas);
                         break;
                     }
                     else
                         break;
-                case EnumTypeDataBase.ORACLEDB:
+                case EnumTypeDataBase.OracleIBS:
+                    DataConnection = oracleConnection;
                     break;
                 default:
                     break;
@@ -77,8 +79,8 @@ namespace ARQCALC.DAL
                 case EnumNameDataBase.ARQCALC:
                     oSqlConnection.ConnectionString = this.strSQLConnection;
                     break;
-                case EnumNameDataBase.OTRA:
-                    oSqlConnection.ConnectionString = this.strSQLCobranzasConnection;
+                case EnumNameDataBase.bdCobranzas:
+                    oSqlConnection.ConnectionString = this.strSQLConnection;
                     break;
                 default:
                     break;
@@ -88,13 +90,14 @@ namespace ARQCALC.DAL
         public DbDataReader ExecuteByStoredProcedure(string ProcedureName,
                                                     IEnumerable<DbParameter> parameters = null,
                                                     EnumTypeDataBase typeDataBase = EnumTypeDataBase.SQLDB,
-                                                    EnumNameDataBase nameDataBase = EnumNameDataBase.ARQCALC,
+                                                    EnumNameDataBase nameDataBaseName = EnumNameDataBase.ARQCALC,
                                                     EnumTypeExecute typeExecute = EnumTypeExecute.ExecuteReader)
         {
-            DbConnection DataConnection = GetConnection(typeDataBase, nameDataBase);
+            DbConnection DataConnection = GetConnection(typeDataBase, nameDataBaseName);
             DbCommand cmdCommand = DataConnection.CreateCommand();
             cmdCommand.CommandText = ProcedureName;
             cmdCommand.CommandType = CommandType.StoredProcedure;
+            cmdCommand.CommandTimeout = 0;
 
             if (parameters != null)
             {
@@ -120,6 +123,68 @@ namespace ARQCALC.DAL
             }
 
             return myReader;
+        }
+        public DbDataReader ExecuteByStoredProcedure(string ProcedureName,
+                                                    IEnumerable<DbParameter> parameters = null,
+                                                    EnumTypeDataBase typeDataBase = EnumTypeDataBase.OracleIBS,
+                                                    EnumTypeExecute typeExecute = EnumTypeExecute.ExecuteReader)
+        {
+            DbConnection DataConnection = GetConnection(typeDataBase);
+            DbCommand cmdCommand = DataConnection.CreateCommand();
+            cmdCommand.CommandText = ProcedureName;
+            cmdCommand.CommandType = CommandType.StoredProcedure;
+
+            if (parameters != null)
+            {
+                foreach (DbParameter parameter in parameters)
+                {
+                    cmdCommand.Parameters.Add(parameter);
+                }
+            }
+
+            DataConnection.Open();
+            DbDataReader myReader;
+
+            if (typeExecute == EnumTypeExecute.ExecuteReader)
+            {
+                if (typeDataBase == EnumTypeDataBase.OracleIBS)
+                {
+                    if (IsOracleReader(cmdCommand))
+                    {
+                        myReader = cmdCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                    }
+                    else { myReader = null; }
+                }
+                else
+                {
+                    myReader = null;
+                }
+            }
+            else
+            {
+                cmdCommand.ExecuteNonQuery();
+                ParamsCollectionResult = cmdCommand.Parameters;
+                cmdCommand.Connection.Close();
+                myReader = null;
+            }
+
+            return myReader;
+        }
+        private bool IsOracleReader(DbCommand cmdCommand)
+        {
+            bool isOracleReader = false;
+            foreach (DbParameter item in cmdCommand.Parameters)
+            {
+                if (item is OracleParameter)
+                {
+                    if ((item as OracleParameter).OracleDbType == OracleDbType.RefCursor)
+                    {
+                        isOracleReader = true;
+                        break;
+                    }
+                }
+            }
+            return isOracleReader;
         }
     }
 }

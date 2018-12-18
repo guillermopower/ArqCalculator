@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ARQCALC.Entidades;
+using ARQCALC.DAL;
 
 namespace ARQCALC.Business
 {
-    public class MaterialBusiness
+    public class MaterialBusiness: IMaterialBusiness
     {
-        DAL.MaterialDAL dal = new DAL.MaterialDAL();
+        public readonly IMaterialDAL dal;
 
-        public List<Material> GetMateriales(int? IdMaterial, string NombreMaterial)
+        public MaterialBusiness(IMaterialDAL dal)
         {
-            List<Material> lstMateriales = new List<Material>();
+            this.dal = dal;
+        }
+
+        public List<ARQCALC.Entidades.Material> GetMateriales(int? IdMaterial, string NombreMaterial)
+        {
+            List<ARQCALC.Entidades.Material> lstMateriales = new List<ARQCALC.Entidades.Material>();
             try
             {
                 lstMateriales = dal.GetMateriales(IdMaterial , NombreMaterial);

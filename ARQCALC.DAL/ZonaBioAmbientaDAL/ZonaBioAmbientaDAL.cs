@@ -12,12 +12,13 @@ namespace ARQCALC.DAL
 {
     public class ZonaBioAmbientalDAL: IZonaBioAmbientalDAL
     {
+        private readonly IConnectionBase _connectionBase;
         public List<ZonaBioAmbiental> ListaZonas;
 
         
-        public ZonaBioAmbientalDAL()
+        public ZonaBioAmbientalDAL(IConnectionBase ConnectionBase)
         {
-            
+            _connectionBase = ConnectionBase;
         }
          
         public List<ZonaBioAmbiental> GetZonaBioAmbiental(int? IdZona = null, string NombreZona = null)
@@ -28,7 +29,7 @@ namespace ARQCALC.DAL
                 new SqlParameter("@NombreZona",NombreZona)
             };
 
-            ConnectionBase _connectionBase = new ConnectionBase();
+            //ConnectionBase _connectionBase = new ConnectionBase();
             using (SqlDataReader dr = (SqlDataReader)_connectionBase.ExecuteByStoredProcedure("spZONASBIOAMBIENTALES_SELECT",
                                                                                                parameters,
                                                                                                 ConnectionBase.EnumTypeDataBase.SQLDB,
