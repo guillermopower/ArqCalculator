@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARQCALC.Entidades
 {
-    public class Resultados
+    public class Resultado
     {
         public string Masa { get; set; }
         public string Resistencia_Termica { get; set; }

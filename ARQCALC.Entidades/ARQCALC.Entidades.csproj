@@ -45,7 +45,7 @@
     <Compile Include="ItemPresentacion.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resultados.cs" />
+    <Compile Include="Resultado.cs" />
     <Compile Include="ZonaBioAmbiental.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
