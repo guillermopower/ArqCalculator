@@ -7,20 +7,20 @@ using ARQCALC.DAL;
 
 namespace ARQCALC.Business
 {
-    public class Calculos: ICalculos
+    public class CalculosBusiness : ICalculosBusiness
     {
         public static float alfai = 7;
         public static float alfaeMURO = 20;
         public static float alfaeCUBIERTA = 25;
 
-        private readonly IZonaBioAmbientalDAL zonaBio;
+        private readonly IZonaBioAmbientalBusiness zonaBio;
 
-        private readonly IMaterialBusiness dal;
+        private readonly IMaterialBusiness materialBsnss;
 
-        public Calculos(IZonaBioAmbientalDAL zonaBio, IMaterialBusiness dal)
+        public CalculosBusiness(IZonaBioAmbientalBusiness zonaBio, IMaterialBusiness materialBsnss)
         {
             this.zonaBio = zonaBio;
-            this.dal = dal;
+            this.materialBsnss = materialBsnss;
         }
 
         public string CalcularResistenciaTermica(List<Item> ListaItems, bool EsMuro=true)
@@ -30,7 +30,7 @@ namespace ARQCALC.Business
             foreach (Item _item in ListaItems)
             {
                 
-                Material _material = dal.GetMateriales(null, null).FirstOrDefault(x => x.IdMaterial == _item.IdMaterial);
+                Material _material = materialBsnss.GetMateriales(_item.IdMaterial, null).FirstOrDefault();
                 Resistencia += _item.Espesor / (float)_material.ConductividadPractica;
             }
 
@@ -55,7 +55,7 @@ namespace ARQCALC.Business
             foreach (Item _item in ListaItems)
             {
                 
-                Material _material = dal.GetMateriales(null, null).FirstOrDefault(x => x.IdMaterial == _item.IdMaterial);
+                Material _material = materialBsnss.GetMateriales(_item.IdMaterial, null).FirstOrDefault();
                 MasaMuro += _item.Espesor *(float) _material.PesoEspecificoDesde;
             }
 
@@ -69,7 +69,7 @@ namespace ARQCALC.Business
             float floatAux = 0;
             float sumando = 0;
             float coeficiente = 0;
-            ZonaBioAmbiental z = zonaBio.GetZonaBioAmbiental().Where(x => x.NombreZona.Equals(zona)).OrderBy(Y=>Y.IndiceExterno).FirstOrDefault();
+            ZonaBioAmbiental z = zonaBio.GetZonaBioAmbientales(null,zona).OrderBy(Y=>Y.IndiceExterno).FirstOrDefault();
 
             if (!EsCubierta)
             {

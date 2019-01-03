@@ -29,15 +29,15 @@ namespace arqCalcWebApp
 
         }
 
-        public List<Resultados> ListaResultados
+        public List<Resultado> ListaResultados
         {
             get
             {
                 if (HttpContext.Current.Session["ListaResultados"] == null)
                 {
-                    HttpContext.Current.Session["ListaResultados"] = new List<Resultados>();
+                    HttpContext.Current.Session["ListaResultados"] = new List<Resultado>();
                 }
-                return HttpContext.Current.Session["ListaResultados"] as List<Resultados>;
+                return HttpContext.Current.Session["ListaResultados"] as List<Resultado>;
             }
             set
             {
@@ -58,6 +58,7 @@ namespace arqCalcWebApp
 
         public void CargarControles()
         {
+            /*
             ZonaBioAmbientalBusiness ZonaBssnss = new ZonaBioAmbientalBusiness();
             MaterialBusiness materialBsnss = new MaterialBusiness();
             
@@ -75,6 +76,7 @@ namespace arqCalcWebApp
 
             LimpiarGrillagdvItemsACalcular();
             LimpiarGrillaResultados();
+            */
         }
 
         private void LimpiarGrillagdvItemsACalcular()
@@ -130,16 +132,17 @@ namespace arqCalcWebApp
 
         protected void btnCalcular_Click(object sender, EventArgs e)
         {
+            /*
             try
             { 
         	    if(ListaItems.Count()==0) return;
             
                 List<Item> ListaMaterialesMuro = new List<Item>();
 
-                Calculos calcu = new Calculos();
+                Calculos calcu = new Calculos(new IZonaBioAmbientalDAL, new IMaterialBusiness);
                 ListaMaterialesMuro = ListaItems.Cast<Item>().ToList();
 
-                Resultados rdo = new Resultados();
+                Resultado rdo = new Resultado();
 
                 string MasaMuro_String = calcu.CalcularMasa(ListaMaterialesMuro);
                 float MasaMuro = float.Parse(MasaMuro_String.Split(' ')[0]);
@@ -175,6 +178,7 @@ namespace arqCalcWebApp
             {
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Error!", "alert('" + ex.Message + "')", true);
             }
+            */
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)

@@ -81,7 +81,7 @@ namespace ARQCALC.WebApi
             kernel.Bind<IMaterialBusiness>().To<MaterialBusiness>();
             kernel.Bind<IZonaBioAmbientalDAL>().To<ZonaBioAmbientalDAL>();
             kernel.Bind<IZonaBioAmbientalBusiness>().To<ZonaBioAmbientalBusiness>();
-           
+            kernel.Bind<ICalculosBusiness>().To<CalculosBusiness>();
         }
     }
 }

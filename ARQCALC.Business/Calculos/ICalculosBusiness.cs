@@ -7,7 +7,7 @@ using ARQCALC.Entidades;
 
 namespace ARQCALC.Business
 {
-    public interface ICalculos
+    public interface ICalculosBusiness
     {
         string CalcularResistenciaTermica(List<Item> ListaItems, bool EsMuro = true);
         string CalcularMasa(List<Item> ListaItems);

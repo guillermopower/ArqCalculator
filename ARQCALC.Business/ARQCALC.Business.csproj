@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculos\Calculos.cs" />
-    <Compile Include="Calculos\ICalculos.cs" />
+    <Compile Include="Calculos\CalculosBusiness.cs" />
+    <Compile Include="Calculos\ICalculosBusiness.cs" />
     <Compile Include="Material\IMaterialBusiness.cs" />
     <Compile Include="Material\MaterialBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
