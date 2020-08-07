@@ -6,12 +6,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ARQCALC.Business;
 using ARQCALC.Entidades;
+using CoreCalculoConductividad.RulesBusiness;
+using ARQCALC.DAL;
 
 namespace arqCalcWebApp
 {
     public partial class Principal : System.Web.UI.Page
     {
-       
+        IZonaBioAmbientalBusiness objZonaBioAmbientalBusiness = new ZonaBioAmbientalBusiness();
+        IMaterialBusiness objMaterialBusiness = new MaterialBusiness();
+
         public List<ItemPresentacion> ListaItems
         {
             get
@@ -58,17 +62,13 @@ namespace arqCalcWebApp
 
         public void CargarControles()
         {
-            /*
-            ZonaBioAmbientalBusiness ZonaBssnss = new ZonaBioAmbientalBusiness();
-            MaterialBusiness materialBsnss = new MaterialBusiness();
-            
-            this.ddlZona.DataSource = ZonaBssnss.GetZonaBioAmbientales(null,null).ToList();
+            this.ddlZona.DataSource = objZonaBioAmbientalBusiness.GetZonaBioAmbientales(null,null).ToList();
             this.ddlZona.DataTextField = "NombreZona";
             this.ddlZona.DataValueField="IdZona";
             this.ddlZona.DataBind();
             this.ddlZona.SelectedIndex = 8;
 
-            this.ddlMateriales.DataSource = materialBsnss.GetMateriales(null,null).ToList();
+            this.ddlMateriales.DataSource = objMaterialBusiness.GetMateriales(null,null).ToList();
             this.ddlMateriales.DataTextField = "NombreMaterial";
             this.ddlMateriales.DataValueField = "IdMaterial";
             this.ddlMateriales.DataBind();
@@ -76,7 +76,7 @@ namespace arqCalcWebApp
 
             LimpiarGrillagdvItemsACalcular();
             LimpiarGrillaResultados();
-            */
+            
         }
 
         private void LimpiarGrillagdvItemsACalcular()
@@ -132,14 +132,14 @@ namespace arqCalcWebApp
 
         protected void btnCalcular_Click(object sender, EventArgs e)
         {
-            /*
+            
             try
             { 
         	    if(ListaItems.Count()==0) return;
             
                 List<Item> ListaMaterialesMuro = new List<Item>();
 
-                Calculos calcu = new Calculos(new IZonaBioAmbientalDAL, new IMaterialBusiness);
+                CalculosBusiness calcu = new CalculosBusiness(objZonaBioAmbientalBusiness, objMaterialBusiness);
                 ListaMaterialesMuro = ListaItems.Cast<Item>().ToList();
 
                 Resultado rdo = new Resultado();
@@ -178,7 +178,7 @@ namespace arqCalcWebApp
             {
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Error!", "alert('" + ex.Message + "')", true);
             }
-            */
+            
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)

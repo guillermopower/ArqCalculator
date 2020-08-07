@@ -11,6 +11,11 @@ namespace ARQCALC.Business
     {
         public readonly IMaterialDAL dal;
 
+        public MaterialBusiness()
+        {
+            this.dal = new MaterialDAL();
+        }
+
         public MaterialBusiness(IMaterialDAL dal)
         {
             this.dal = dal;

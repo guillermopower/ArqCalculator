@@ -38,7 +38,7 @@ namespace ARQCALC.DAL
 
         public ConnectionBase()
         {
-            sqlConnection.ConnectionString = this.strSQLConnection;
+            if(!string.IsNullOrEmpty(this.strSQLConnection)) sqlConnection.ConnectionString =  this.strSQLConnection; else
             oracleConnection.ConnectionString = this.strOracleIBSConnection;
         }
 

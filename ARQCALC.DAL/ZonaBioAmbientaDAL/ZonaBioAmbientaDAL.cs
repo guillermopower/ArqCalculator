@@ -20,7 +20,12 @@ namespace ARQCALC.DAL
         {
             _connectionBase = ConnectionBase;
         }
-         
+
+        public ZonaBioAmbientalDAL()
+        {
+            _connectionBase = new ConnectionBase();
+        }
+
         public List<ZonaBioAmbiental> GetZonaBioAmbiental(int? IdZona = null, string NombreZona = null)
         {
             List<SqlParameter> parameters = new List<SqlParameter>

@@ -21,3 +21,12 @@ C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Bus
 C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Business.csproj.CopyComplete
 C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Business.dll
 C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Business.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\bin\Debug\ARQCALC.Business.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\bin\Debug\ARQCALC.Business.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\bin\Debug\ARQCALC.DAL.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\bin\Debug\ARQCALC.Entidades.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\bin\Debug\ARQCALC.DAL.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\bin\Debug\ARQCALC.Entidades.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Business.csprojResolveAssemblyReference.cache
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Business.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Business\obj\Debug\ARQCALC.Business.pdb

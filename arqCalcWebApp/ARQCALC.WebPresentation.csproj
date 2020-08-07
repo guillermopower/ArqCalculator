@@ -47,6 +47,10 @@
     <PublishDatabases>false</PublishDatabases>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreCalculoConductividad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\CoreCalculoConductividad.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -255,6 +259,10 @@
     <ProjectReference Include="..\ARQCALC.Business\ARQCALC.Business.csproj">
       <Project>{25960a16-80bb-4394-bf39-dd5a8e3ae926}</Project>
       <Name>ARQCALC.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ARQCALC.DAL\ARQCALC.DAL.csproj">
+      <Project>{65091D3F-5581-4458-B20C-E68D623C0258}</Project>
+      <Name>ARQCALC.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ARQCALC.Entidades\ARQCALC.Entidades.csproj">
       <Project>{c7c7f50c-2448-427d-adf8-06e2d843ecd7}</Project>

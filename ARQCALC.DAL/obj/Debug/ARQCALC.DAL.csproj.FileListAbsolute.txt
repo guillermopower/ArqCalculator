@@ -17,3 +17,10 @@ C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.cspr
 C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.csproj.CopyComplete
 C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.dll
 C:\Users\THE-CROW\Downloads\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Debug\ARQCALC.DAL.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Debug\ARQCALC.DAL.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Debug\ARQCALC.Entidades.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Debug\ARQCALC.Entidades.pdb
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.csprojResolveAssemblyReference.cache
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.dll
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\obj\Debug\ARQCALC.DAL.pdb

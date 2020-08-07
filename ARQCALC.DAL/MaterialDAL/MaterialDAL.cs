@@ -21,6 +21,11 @@ namespace ARQCALC.DAL
             _connectionBase = ConnectionBase;
         }
 
+        public MaterialDAL()
+        {
+            _connectionBase = new ConnectionBase();
+        }
+
         public List<Material> GetMateriales(int? IdMaterial = null , string NombreMaterial = null)
         {
             List<SqlParameter> parameters = new List<SqlParameter>

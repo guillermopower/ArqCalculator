@@ -11,6 +11,11 @@ namespace ARQCALC.Business
     {
         private readonly IZonaBioAmbientalDAL dal;
 
+        public ZonaBioAmbientalBusiness()
+        {
+            this.dal = new ZonaBioAmbientalDAL();
+        }
+
         public ZonaBioAmbientalBusiness(IZonaBioAmbientalDAL dal)
         {
             this.dal = dal;
@@ -26,7 +31,7 @@ namespace ARQCALC.Business
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             return lstZonaBioAmbientales;
