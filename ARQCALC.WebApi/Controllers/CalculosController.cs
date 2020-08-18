@@ -27,32 +27,67 @@ namespace ARQCALC.WebApi.Controllers
 
         [System.Web.Http.Route("api/calcular-resistencia-termica")]
         [System.Web.Http.HttpPost]
-        public string CalcularResistenciaTermica([FromBody]List<Item> ListaItems, bool EsMuro = true)
+        public string CalcularResistenciaTermica([FromBody]ParamsCalcularResistenciaTermica parametros)
         {
-            return _CalculosBusiness.CalcularResistenciaTermica(ListaItems, EsMuro);
+            return _CalculosBusiness.CalcularResistenciaTermica(parametros.ListaItems, parametros.EsMuro);
         }
 
         //[ActionName("calcular-transmitancia")]
         [System.Web.Http.Route("api/calcular-transmitancia")]
-        [HttpGet]
-        public string CalcularTransmitancia(float Resistencia)
+        [HttpPost]
+        public string CalcularTransmitancia([FromBody]ParamsCalcularTansmitancia parametros)
         {
-            return _CalculosBusiness.CalcularTransmitancia(Resistencia);
+            return _CalculosBusiness.CalcularTransmitancia(parametros.ResistenciaTermica);
         }
 
         [System.Web.Http.Route("api/calcular-masa")]
         [System.Web.Http.HttpPost]
-        public string CalcularMasa([FromBody]List<Item> ListaItems)
+        public string CalcularMasa([FromBody]ParamsCalcularMasa parametros)
         {
-            return _CalculosBusiness.CalcularMasa(ListaItems);
+            return _CalculosBusiness.CalcularMasa(parametros.ListaItems);
         }
 
-        //[ActionName("calcular-k-max-admisible")]
         [System.Web.Http.Route("api/calcular-k-max-admisible")]
-        [HttpGet]
-        public string CalcularKMaxAdmisible(float MasaMuro, string orientacion = null, string zona = "IIIb", bool EsCubierta = false)
+        [HttpPost]
+        //public string CalcularKMaxAdmisible(float MasaMuro, string orientacion = null, string zona = "IIIb", bool EsCubierta = false)
+        public string CalcularKMaxAdmisible([FromBody]ParamsCalcularKMaxAdmisible parametros)
         {
-            return _CalculosBusiness.CalcularKMaxAdmisible(MasaMuro, orientacion, zona, EsCubierta);
+            return _CalculosBusiness.CalcularKMaxAdmisible(parametros.MasaMuro, parametros.orientacion, parametros.zona, (bool)parametros.EsCubierta);
         }
+    }
+    public class ParamsCalcularResistenciaTermica
+    {
+        public List<Item> ListaItems { get; set; }
+        public bool EsMuro { get; set; }
+    }
+    public class ParamsCalcularTansmitancia
+    {
+        public float ResistenciaTermica { get; set; }
+    }
+    public class ParamsCalcularMasa
+    {
+        public List<Item> ListaItems { get; set; }
+    }
+    public class ParamsCalcularKMaxAdmisible
+    {
+        public float MasaMuro { get; set; }
+        public string orientacion { get; set; }
+       
+        private string _zona;
+
+        public string zona
+        {
+            get { return _zona; }
+            set { _zona = (value ?? "IIIb"); }
+        }
+
+        private bool? _EsCubierta;
+
+        public bool? EsCubierta
+        {
+            get { return _EsCubierta; }
+            set { _EsCubierta = (value??false); }
+        }
+
     }
 }
