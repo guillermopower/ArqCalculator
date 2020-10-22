@@ -17,10 +17,18 @@ namespace ARQCALC.Business
 
         private readonly IMaterialBusiness materialBsnss;
 
-        public CalculosBusiness(IZonaBioAmbientalBusiness zonaBio, IMaterialBusiness materialBsnss)
+        private readonly ICalculoDeMaterialesDAL iCalculoDeMaterialesDAL;
+
+        public CalculosBusiness()
+        {
+            this.iCalculoDeMaterialesDAL = new CalculoDeMaterialesDAL();
+        }
+
+        public CalculosBusiness(IZonaBioAmbientalBusiness zonaBio, IMaterialBusiness materialBsnss, ICalculoDeMaterialesDAL iCalculoDeMaterialesDAL)
         {
             this.zonaBio = zonaBio;
             this.materialBsnss = materialBsnss;
+            this.iCalculoDeMaterialesDAL = iCalculoDeMaterialesDAL;
         }
 
         public string CalcularResistenciaTermica(List<Item> ListaItems, bool EsMuro=true)
@@ -93,6 +101,22 @@ namespace ARQCALC.Business
            
             return (1/Resistencia) <= KMaxAdmisible;
         }
-      
+
+        public List<CalculoDeMaterialesResult> GetMatrizCalculo(int IdSubTipoCalculo)
+        {
+            List<CalculoDeMaterialesResult> MatrizCalculo = new List<CalculoDeMaterialesResult>();
+            try
+            {
+                MatrizCalculo = iCalculoDeMaterialesDAL.GetMatrizCalculo(IdSubTipoCalculo);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return MatrizCalculo;
+        }
+
     }
 }

@@ -13,5 +13,6 @@ namespace ARQCALC.Entidades
         public string IndiceExterno { get; set; }
         public string IndiceCubierta { get; set; }
         public string Observaciones { get; set; }
+        public string Descripcion { get; set; }
     }
 }

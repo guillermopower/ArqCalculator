@@ -13,6 +13,6 @@ namespace ARQCALC.Business
         string CalcularMasa(List<Item> ListaItems);
         string CalcularKMaxAdmisible(float MasaMuro, string orientacion = null, string zona = "IIIb", bool EsCubierta = false);
         bool Verificar(float KMaxAdmisible, float Resistencia);
-
+        List<CalculoDeMaterialesResult> GetMatrizCalculo(int IdSubTipoCalculo);
     }
 }

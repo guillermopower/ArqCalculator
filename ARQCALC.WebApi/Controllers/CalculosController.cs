@@ -54,7 +54,15 @@ namespace ARQCALC.WebApi.Controllers
         {
             return _CalculosBusiness.CalcularKMaxAdmisible(parametros.MasaMuro, parametros.orientacion, parametros.zona, (bool)parametros.EsCubierta);
         }
+
+        [System.Web.Http.Route("api/calcular-cantidad-materiales/{IdSubTipoCalculo}/")]
+        [HttpGet]
+        public List<CalculoDeMaterialesResult> CalcularCantidadMateriales(int IdSubTipoCalculo)
+        {
+            return _CalculosBusiness.GetMatrizCalculo(IdSubTipoCalculo);
+        }
     }
+   
     public class ParamsCalcularResistenciaTermica
     {
         public List<Item> ListaItems { get; set; }

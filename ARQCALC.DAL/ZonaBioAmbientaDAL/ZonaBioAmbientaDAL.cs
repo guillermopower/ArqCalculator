@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace ARQCALC.DAL
 {
     public class ZonaBioAmbientalDAL: IZonaBioAmbientalDAL
@@ -49,6 +48,7 @@ namespace ARQCALC.DAL
                     int pos_IndiceExterno = dr.GetOrdinal("IndiceExterno");
                     int pos_IndiceCubierta = dr.GetOrdinal("IndiceCubierta");
                     int pos_Observaciones = dr.GetOrdinal("Observaciones");
+                    int pos_Descripcion = dr.GetOrdinal("Descripcion");
 
                     ZonaBioAmbiental oZonaBioAmbiental;
                     ListaZonas = new List<ZonaBioAmbiental>();
@@ -71,7 +71,8 @@ namespace ARQCALC.DAL
                         oZonaBioAmbiental.IndiceExterno = dr.GetString(pos_IndiceExterno);
                         oZonaBioAmbiental.IndiceCubierta = dr.GetString(pos_IndiceCubierta);
                         oZonaBioAmbiental.Observaciones = dr.GetString(pos_Observaciones);
-                        
+                        oZonaBioAmbiental.Descripcion = dr.GetString(pos_Descripcion);
+
                         ListaZonas.Add(oZonaBioAmbiental);
                     }
                 }
