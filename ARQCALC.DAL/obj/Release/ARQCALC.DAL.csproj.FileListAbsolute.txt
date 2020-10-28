@@ -1,4 +1,5 @@
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\obj\Release\ARQCALC.DAL.csprojResolveAssemblyReference.cache
+C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\ARQCALC.DAL.dll.config
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\ARQCALC.DAL.dll
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\ARQCALC.DAL.pdb
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\ARQCALC.Entidades.dll
@@ -35,7 +36,3 @@ C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\NuGet.Projec
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\NuGet.Protocol.xml
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\NuGet.Resolver.xml
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\NuGet.Versioning.xml
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\EntityFramework.dll
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\EntityFramework.SqlServer.dll
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\EntityFramework.xml
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.DAL\bin\Release\EntityFramework.SqlServer.xml

@@ -147,6 +147,3 @@ C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\NuGet.Resolver.xm
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\NuGet.Versioning.xml
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\es\System.Net.Http.Formatting.resources.dll
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\es\System.Web.Http.resources.dll
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.WebApi\bin\System.IdentityModel.Tokens.Jwt.xml
