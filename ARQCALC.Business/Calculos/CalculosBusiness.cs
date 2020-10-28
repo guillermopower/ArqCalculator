@@ -31,6 +31,12 @@ namespace ARQCALC.Business
             this.iCalculoDeMaterialesDAL = iCalculoDeMaterialesDAL;
         }
 
+        public CalculosBusiness(IZonaBioAmbientalBusiness zonaBio, IMaterialBusiness materialBsnss)
+        {
+            this.zonaBio = zonaBio;
+            this.materialBsnss = materialBsnss;
+        }
+
         public string CalcularResistenciaTermica(List<Item> ListaItems, bool EsMuro=true)
         {
             float? Resistencia = 0;

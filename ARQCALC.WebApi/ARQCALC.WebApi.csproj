@@ -329,7 +329,9 @@
     <Content Include="libman.json" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="apiapp.json" />
-    <None Include="Properties\PublishProfiles\Profile Publish.pubxml" />
+    <None Include="Properties\PublishProfiles\wsARQCALCWebapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\wsARQCALCWebapi - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\wsARQCALCWebapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -398,6 +400,9 @@
       <Project>{c7c7f50c-2448-427d-adf8-06e2d843ecd7}</Project>
       <Name>ARQCALC.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

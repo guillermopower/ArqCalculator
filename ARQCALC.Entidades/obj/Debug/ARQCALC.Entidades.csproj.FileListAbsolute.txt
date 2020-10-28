@@ -42,4 +42,3 @@ C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Entidades\bin\Debug\NuGet.Pr
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Entidades\bin\Debug\NuGet.Protocol.xml
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Entidades\bin\Debug\NuGet.Resolver.xml
 C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Entidades\bin\Debug\NuGet.Versioning.xml
-C:\Users\HANSOLO\Source\Repos\ArqCalculator\ARQCALC.Entidades\obj\Debug\ARQCALC.Entidades.csprojResolveAssemblyReference.cache

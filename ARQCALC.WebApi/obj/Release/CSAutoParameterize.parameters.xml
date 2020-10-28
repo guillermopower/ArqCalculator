@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ARQCALCConnectionString-Web.config Connection String" description="ARQCALCConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=arqcalcbbddsrv.database.windows.net;Initial Catalog=ARQCALC;Integrated Security=False;User ID=usradminbbdd;Password=Geminis1977+;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\HANSOLO\\Source\\Repos\\ArqCalculator\\ARQCALC\.WebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ARQCALCConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
